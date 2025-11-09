@@ -1,1 +1,38 @@
-This ReadMe will contain a list of the parameters, use cases, and description of the equation. 
+Bioengineering & Bioinformatics Quick Reference
+==============================================
+
+This repository provides a lightweight collection of callable utility functions
+that address frequently encountered calculations in biomedical engineering and
+bioinformatics.  Import ``main`` from this project and use the functions
+directly in your notebook or script:
+
+```python
+from main import (
+    calculate_body_mass_index,
+    calculate_body_surface_area,
+    mean_arterial_pressure,
+    cardiac_output,
+    estimate_gfr_ckd_epi,
+    transcribe_dna_to_rna,
+    reverse_complement_dna,
+    gc_content,
+)
+```
+
+Available functions
+-------------------
+
+| Function | Description | Key Parameters |
+| --- | --- | --- |
+| ``calculate_body_mass_index`` | Computes BMI from weight (kg) and height (m). | ``weight_kg``, ``height_m`` |
+| ``calculate_body_surface_area`` | Body surface area using the Mosteller formula. | ``height_cm``, ``weight_kg`` |
+| ``mean_arterial_pressure`` | Mean arterial pressure from systolic/diastolic pressures. | ``systolic_mm_hg``, ``diastolic_mm_hg`` |
+| ``cardiac_output`` | Converts heart rate and stroke volume to cardiac output (L/min). | ``heart_rate_bpm``, ``stroke_volume_ml`` |
+| ``estimate_gfr_ckd_epi`` | CKD-EPI (2009) estimated glomerular filtration rate. | ``creatinine_mg_dl``, ``age_years``, ``sex``, ``is_black`` |
+| ``transcribe_dna_to_rna`` | Produces an RNA transcript by substituting uracil for thymine. | ``sequence`` |
+| ``reverse_complement_dna`` | Returns the reverse complement of a DNA sequence. | ``sequence`` |
+| ``gc_content`` | Calculates the GC fraction for DNA or RNA sequences. | ``sequence`` |
+
+Each function performs basic input validation and raises informative
+``ValueError`` or ``TypeError`` exceptions when provided with invalid data. For
+examples of usage, execute ``python main.py`` to run the inline demonstration.
