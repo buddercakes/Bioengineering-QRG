@@ -36,3 +36,11 @@ Available functions
 Each function performs basic input validation and raises informative
 ``ValueError`` or ``TypeError`` exceptions when provided with invalid data. For
 examples of usage, execute ``python main.py`` to run the inline demonstration.
+
+
+Topology and TDA guides
+-----------------------
+
+| Guide | Description |
+| --- | --- |
+| [Python-first biomedical TDA workflow](docs/topology_tda_workflow.md) | Practical workflow for moving EMG, EEG, genomics, microbiome, network, or structure data into persistent-homology features and biomedical interpretation. |
