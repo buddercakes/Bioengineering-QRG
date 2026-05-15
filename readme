@@ -7,6 +7,11 @@ bioinformatics.  Import ``main`` from this project and use the functions
 directly in your notebook or script:
 
 ```python
+from gibbs_landscape import (
+    run_circadian_simulation,
+    run_sleep_duration_sweep,
+)
+
 from main import (
     calculate_body_mass_index,
     calculate_body_surface_area,
@@ -36,3 +41,31 @@ Available functions
 Each function performs basic input validation and raises informative
 ``ValueError`` or ``TypeError`` exceptions when provided with invalid data. For
 examples of usage, execute ``python main.py`` to run the inline demonstration.
+
+
+Topology and TDA guides
+-----------------------
+
+| Guide | Description |
+| --- | --- |
+| [Python-first biomedical TDA workflow](docs/topology_tda_workflow.md) | Practical workflow for moving EMG, EEG, genomics, microbiome, network, or structure data into persistent-homology features and biomedical interpretation. |
+
+
+Thermodynamic cognition model
+-----------------------------
+
+| Module | Description |
+| --- | --- |
+| `gibbs_landscape.py` | Importable version of the Gibbs free-energy cognitive landscape notebook, with deterministic circadian simulations, sleep-duration sweeps, and two-dimensional Gibbs surface sampling. |
+
+Example:
+
+```python
+from gibbs_landscape import run_circadian_simulation, run_sleep_duration_sweep
+
+simulation = run_circadian_simulation(sleep_duration_hours=8, seed=7)
+print(simulation.average_atp, simulation.max_entropy, simulation.gibbs_variance)
+
+sweep = run_sleep_duration_sweep(sleep_durations=(4, 6, 8, 10), seed=7)
+print(sweep["gibbs_variance"])
+```
